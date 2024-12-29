@@ -1,0 +1,6 @@
+/* src/assets/main.css */
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

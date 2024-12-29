@@ -1,0 +1,36 @@
+.env
+venv/
+instance/
+__pycache__/
+.vscode/
+node_modules/
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Celery logs
+celery_worker.log
+celery_beat.log
+
+# Redis
+dump.rdb
+*.rdb
+
+# Celery and Redis temporary files
+*.pid
+*.sock
+
+# Celery beat database files
+celerybeat-schedule.db
+
+# Celery worker state
+celery_worker_state/
+
+# Celery task logs
+celery_tasks.log
+
+# Redis append-only file (AOF)
+appendonly.aof
+
+# Redis cluster configuration
+nodes.conf
