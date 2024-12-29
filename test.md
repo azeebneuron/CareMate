@@ -172,4 +172,36 @@ curl http://localhost:5000/api/health/summary \
 # Check health alerts
 curl http://localhost:5000/api/health/alerts \
 -H "Authorization: Bearer YOUR_TOKEN"
+
+# Testing Videocall
+# Get a token by logging in first
+curl -X POST http://localhost:5000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "password"
+  }'
+
+# Start a call (replace TOKEN and CALLEE_ID)
+curl -X POST http://localhost:5000/api/calls/start \
+  -H "Authorization: Bearer TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "callee_id": "CALLEE_ID"
+  }'
 ```
+
+The callee_id would be the user ID of the person you want to call.
+
+Check call history
+```bash
+curl -X GET http://localhost:5000/api/calls/history \
+  -H "Authorization: Bearer TOKEN"
+```
+
+MAIL_USERNAME = os.environ.get('MAIL_USERNAME'),
+MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') ,
+
+This has also been used, so just add MAIL_USERNAME AND MAIL_PASSWORD in a .env file after creating account in mailtrap and connecting it to flask mail
+
+## Testing Mail requires setting up Mailtrap account and using a .env file
